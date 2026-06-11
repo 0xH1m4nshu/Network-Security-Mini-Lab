@@ -18,6 +18,7 @@ A hands-on Cisco Packet Tracer project that demonstrates essential CCNA security
 ## 🏗️ Network Topology
 
 ### Devices
+
 - Cisco 2911 Router
 - Cisco 2960 Switch
 - 3 PCs
@@ -35,11 +36,11 @@ A hands-on Cisco Packet Tracer project that demonstrates essential CCNA security
 ## 🔌 Connections
 
 | Device | Port | Connected To |
-|----------|----------|--------------|
+|----------|----------------|----------------|
 | PC0 | FastEthernet0 | Switch Fa0/1 |
 | PC1 | FastEthernet0 | Switch Fa0/2 |
 | PC2 | FastEthernet0 | Switch Fa0/3 |
-| Router G0/0 | Switch Fa0/24 |
+| Router G0/0 | GigabitEthernet0/0 | Switch Fa0/24 |
 
 ---
 
@@ -70,11 +71,13 @@ Blocked Guest VLAN from accessing the Admin VLAN while allowing other network co
 ## 🧪 Verification
 
 ### Connectivity Tests
+
 - ✅ Admin ↔ IT
 - ✅ Admin ↔ Guest
 - ✅ Guest ↔ IT
 
 ### Security Tests
+
 - ❌ Guest → Admin (Blocked by ACL)
 - ✅ SSH Login Successful
 - ✅ Port Security Enabled
@@ -96,7 +99,7 @@ Blocked Guest VLAN from accessing the Admin VLAN while allowing other network co
 
 ## 📂 Project Files
 
-```
+```text
 Network-Security-Mini-Lab/
 │
 ├── network-security-mini-lab.pkt
@@ -114,7 +117,14 @@ Network-Security-Mini-Lab/
 
 ## 🎯 Learning Objectives
 
-This project was created to practice and demonstrate practical CCNA networking and security skills, including network segmentation, secure device management, and basic enterprise security policies.
+This project was created to practice and demonstrate practical CCNA networking and security skills, including:
+
+- Network segmentation
+- Secure device management
+- Basic enterprise security policies
+- VLAN and trunk configuration
+- Router-on-a-Stick implementation
+- Access control using ACLs
 
 ---
 
@@ -122,11 +132,9 @@ This project was created to practice and demonstrate practical CCNA networking a
 
 **Rule:** Guest users are not allowed to access the Admin network.
 
-```
-Source: 192.168.30.0/24
-Destination: 192.168.10.0/24
-Action: DENY
-```
+| Source | Destination | Action |
+|----------|----------------|--------|
+| 192.168.30.0/24 | 192.168.10.0/24 | DENY |
 
 ---
 
@@ -139,6 +147,36 @@ Action: DENY
 - NTP Configuration
 - Multi-Switch Topology
 - Web and DNS Servers
+
+---
+
+## 📷 Suggested Screenshots
+
+Add these images to the `screenshots/` folder and reference them in this README.
+
+### Network Topology
+
+![Topology](screenshots/topology.png)
+
+### VLAN Configuration
+
+![VLAN Configuration](screenshots/vlan-config.png)
+
+### Port Security
+
+![Port Security](screenshots/port-security.png)
+
+### SSH Login
+
+![SSH Login](screenshots/ssh-login.png)
+
+### ACL Verification
+
+![ACL Test](screenshots/acl-test.png)
+
+### Trunk Configuration
+
+![Trunk Configuration](screenshots/trunk-config.png)
 
 ---
 
